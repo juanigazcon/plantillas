@@ -9,6 +9,12 @@ app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 
+const newProductValidation = (req, res, next) => {
+    let product = req.body
+    if (!product.name || !product.price || !product.img) res.redirect('/error')
+    next()
+}
+
 let products = []
 
 app.get('/', (req,res)=>{
@@ -22,8 +28,12 @@ app.get('/productos', (req, res)=>{
     })
 })
 
-app.post('/productos', (req,res)=>{
+app.post('/productos', newProductValidation, (req,res)=>{
     console.log(req.body)
     products.push(req.body)
     res.redirect('/')
+})
+
+app.get('/error', (req, res)=>{
+    res.render('error')
 })
