@@ -1,0 +1,14 @@
+div(style='text-align:center')
+  h1 Formulario para cargar productos
+div(style='text-align:center')
+  form(action='/productos' method='post')
+    label(style='margin-right: 10px;margin-left: 10px ') Nombre
+    input(name='name')
+    label(style='margin-right: 10px;margin-left: 10px ') Precio
+    input(name='price')
+    label(style='margin-right: 10px;margin-left: 10px ') Imagen
+    input(name='img')
+    button(style='margin-right: 10px;margin-left: 10px ') Enviar
+div(style='text-align:center')
+  button(style='margin-top: 30px')
+    a(href='/productos' style='text-decoration:none') Ver historial de productos

@@ -1,0 +1,32 @@
+<%- include('./partials/header') %>
+<div style="text-align:center">
+<h1>Detalle de productos cargados</h1>
+</div>
+ <% if (products.length>0) { %>
+    <table>
+        <tr>
+            <th style="width:30%">Nombre</th>
+            <th style="width:30%">Precio</th>
+            <th style="width:30%">Imagen</th>
+        </tr>
+        <% products.forEach(element => { %>
+            <tr>
+               <td><p style="text-align:center"><%= element.name %></p></td>
+               <td><p style="text-align:center"><%= element.price %></p></td>
+               <td><p style="text-align:center"><img src="<%= element.img %>" alt="<%= element.name %>" style='width:40%'></p></td>
+            </tr>
+           <% }) %>
+           <tr>
+            <td></td>
+            <td><p style="text-align:center"><button><a href="/" style="text-decoration:none">Volver a la carga de productos</a></button></p></td>
+            <td></td>
+         </tr>
+    </table>
+<% } else { %>
+    <p style="text-align:center">No hay productos</p>
+    <p style="text-align:center"><button><a href="/" style="text-decoration:none">Volver a la carga de productos</a></button></p>
+<% } %>
+    
+
+ 
+

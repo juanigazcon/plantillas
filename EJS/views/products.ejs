@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+<div style="text-align:center">
+    <h1>Formulario para cargar productos</h1>
+    </div>
+    <div style="text-align:center">
+    <form action="/productos" method="post">
+        <label>Nombre</label>
+        <input name="name">
+        <label>Precio</label>
+        <input name="price">
+        <label>Imagen</label>
+        <input name="img">
+        <button>Enviar</button>
+    </form>
+    </div>
+    <div style="text-align:center">
+    <button style="margin-top: 30px"><a href="/productos" style="text-decoration:none">Ver historial de productos</a></button>
+    </div>
