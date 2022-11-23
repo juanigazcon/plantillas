@@ -1,7 +1,7 @@
 div(style='text-align:center')
   h1 Detalle de productos cargados
 div(style='text-align:center')
-if products
+if products.length>0
     div(style='text-align:center;')
         table(width='100%', cellspacing='0', cellpadding='0', border='0', bgcolor='#F2F2F2' style="align-item: center")
             thead
@@ -17,7 +17,7 @@ if products
                                 td(style='text-align:center')    
                                     p=i.price
                                 td(style='text-align:center')   
-                                    img(src=i.img)
+                                    img(src=i.img, alt="")
 else
     div(style='text-align:center')
         h3 No hay productos para mostrar
